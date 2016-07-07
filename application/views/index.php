@@ -41,13 +41,13 @@
 			</h1>
 		</div>
 		<?php foreach ($news as $newsRow ): ?>
-			<div class="col-md-4">
-				<div class="panel panel-default">
+			<div class="col-md-4 " >
+				<div class="panel panel-default" >
 					<div class="panel-heading">
 						<i class="fa fa-file-text-o"> <b><?php echo word_limiter($newsRow['news_title'],5,'...'); ?></b></i>
 					</div>
-					<div class="panel-body">
-						<p><?php echo word_limiter($newsRow['news_detail'],20,'...'); ?></p>
+					<div class="panel-body" style="height:180px;">
+						<p><?php  echo mb_substr($newsRow['news_detail'],0,200,'UTF-8'),"..."; ?></p>
 						<?php echo anchor('main/readNews/'.$newsRow['id_news'], 'อ่านเพิ่มเติม...', 'class="btn btn-default"');?>
 					</div>
 				</div>
