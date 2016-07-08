@@ -100,6 +100,9 @@ class Main extends CI_Controller {
 			case '9':
 			$this->load->view('readNews6');
 			break;
+			case '10':
+			$this->load->view('readNews7');
+			break;
 			default:
 			$massage ="กำลังปรับปรุงเนื้อหาข่าว..";
 			$url = "main/";
