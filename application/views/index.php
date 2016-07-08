@@ -1,5 +1,10 @@
 <?php $this->load->view('header');?>
-
+<style type="text/css" media="screen">
+	img,p{
+		width:50px;
+		height: auto;
+	}
+</style>
 <!-- Header Carousel -->
 <header id="myCarousel" class="carousel slide">
 	<!-- Indicators -->
@@ -42,13 +47,13 @@
 		</div>
 		<?php foreach ($news as $newsRow ): ?>
 			<div class="col-md-4 " >
-				<div class="panel panel-default" >
+				<div class="panel panel-primary" >
 					<div class="panel-heading">
 						<i class="fa fa-file-text-o"> <b><?php echo word_limiter($newsRow['news_title'],5,'...'); ?></b></i>
 					</div>
-					<div class="panel-body" style="height:180px;">
-						<p><?php  echo mb_substr($newsRow['news_detail'],0,200,'UTF-8'),"..."; ?></p>
-						<?php echo anchor('main/readNews/'.$newsRow['id_news'], 'อ่านเพิ่มเติม...', 'class="btn btn-default"');?>
+					<div class="panel-body" style="height:180px;position:relative;display: inline-block ;">
+						<p id="image"><?php  echo mb_substr($newsRow['news_detail'],0,200,'UTF-8'),"..."; ?></p>
+						<?php echo anchor('main/readNews/'.$newsRow['id_news'], 'อ่านเพิ่มเติม...', 'class="btn btn-info" style=" position:absolute; right:0px; bottom:0px; display:inline; "');?>
 					</div>
 				</div>
 			</div>

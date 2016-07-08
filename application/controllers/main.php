@@ -70,45 +70,49 @@ class Main extends CI_Controller {
 		$titleNews = $this->input->post('titleNews');
 		$newsContent = $this->input->post('newsContent');
 		if($titleNews != '' & $newsContent != ''){
+			// echo "<pre>";
+			// echo $titleNews,"<br/>",$newsContent;
+			// echo "1";
 			$this->mdl_main->addNews($titleNews,$newsContent);
 		}else{
+			// echo "2";
 			$this->load->view('admin/addNews');
 		}
 	}
 	public function readNews($newsID)
 	{
-		// $data = array(
-		// 	'readNews' => $this->mdl_main->getNewsID($newsID),
-		// 	);
-		// $this->load->view('readNews',$data);
-		switch ($newsID) {
-			case '4':
-			$this->load->view('readNews1');
-			break;
-			case '5':
-			$this->load->view('readNews2');
-			break;
-			case '6':
-			$this->load->view('readNews3');
-			break;
-			case '7':
-			$this->load->view('readNews4');
-			break;
-			case '8':
-			$this->load->view('readNews5');
-			break;
-			case '9':
-			$this->load->view('readNews6');
-			break;
-			case '10':
-			$this->load->view('readNews7');
-			break;
-			default:
-			$massage ="กำลังปรับปรุงเนื้อหาข่าว..";
-			$url = "main/";
-			$this->alert($massage,$url);
-			break;
-		}
+		$data = array(
+			'readNews' => $this->mdl_main->getNewsID($newsID),
+			);
+		$this->load->view('readNews',$data);
+		// switch ($newsID) {
+		// 	case '4':
+		// 	$this->load->view('readNews1');
+		// 	break;
+		// 	case '5':
+		// 	$this->load->view('readNews2');
+		// 	break;
+		// 	case '6':
+		// 	$this->load->view('readNews3');
+		// 	break;
+		// 	case '7':
+		// 	$this->load->view('readNews4');
+		// 	break;
+		// 	case '8':
+		// 	$this->load->view('readNews5');
+		// 	break;
+		// 	case '9':
+		// 	$this->load->view('readNews6');
+		// 	break;
+		// 	case '10':
+		// 	$this->load->view('readNews7');
+		// 	break;
+		// 	default:
+		// 	$massage ="กำลังปรับปรุงเนื้อหาข่าว..";
+		// 	$url = "main/";
+		// 	$this->alert($massage,$url);
+		// 	break;
+		// }
 	}
 	function addPicture(){
 
