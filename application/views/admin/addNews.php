@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php $this->load->view('header');?>
 <div class="col-sm-12"><br/><br/></div>
 
@@ -74,6 +75,8 @@
 <?php $this->load->view('footer');?>
 >>>>>>> 4a89a851260a3594dbd68780144b77d2928573c8
 =======
+=======
+>>>>>>> parent of fa98650... update news & audio download
 <?php $this->load->view('header');?>
 <div class="col-sm-12"><br/><br/></div>
 
@@ -105,4 +108,7 @@
 </div>
 <hr>
 <?php $this->load->view('footer');?>
+<<<<<<< HEAD
+>>>>>>> parent of fa98650... update news & audio download
+=======
 >>>>>>> parent of fa98650... update news & audio download
