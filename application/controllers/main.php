@@ -53,8 +53,13 @@ class Main extends CI_Controller {
 	{
 		// print_r($_FILES);
 		if($_FILES['userfile'] == ""){
-			$this->load->view('admin/docUpload');
+			$massage = "กรุณาเลือกไฟล์ที่จะอัพโหลด";
+			$url = "main/upload";
+			$this->alert($massage,$url);
+			// $this->load->view('admin/docUpload');
 		}else{
+			// echo "<pre>";
+			// print_r($_FILES);
 			$this->mdl_main->upload_fileDoc();
 		}
 	}
@@ -99,6 +104,12 @@ class Main extends CI_Controller {
 			break;
 			case '9':
 			$this->load->view('readNews6');
+			break;
+			case '10':
+			$this->load->view('readNews7');
+			break;
+			case '11':
+			$this->load->view('readNews8');
 			break;
 			default:
 			$massage ="กำลังปรับปรุงเนื้อหาข่าว..";
