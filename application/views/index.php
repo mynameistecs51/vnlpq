@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php $this->load->view('header');?>
 
 <!-- Header Carousel -->
@@ -127,6 +128,10 @@
 		height: auto;
 	}
 </style>
+=======
+<?php $this->load->view('header');?>
+
+>>>>>>> parent of fa98650... update news & audio download
 <!-- Header Carousel -->
 <header id="myCarousel" class="carousel slide">
 	<!-- Indicators -->
@@ -169,6 +174,7 @@
 		</div>
 		<?php foreach ($news as $newsRow ): ?>
 			<div class="col-md-4 " >
+<<<<<<< HEAD
 				<div class="panel panel-primary" >
 					<div class="panel-heading">
 						<i class="fa fa-file-text-o"> <b><?php echo word_limiter($newsRow['news_title'],5,'...'); ?></b></i>
@@ -176,6 +182,15 @@
 					<div class="panel-body" style="height:180px;position:relative;display: inline-block ;">
 						<p id="image"><?php  echo mb_substr($newsRow['news_detail'],0,200,'UTF-8'),"..."; ?></p>
 						<?php echo anchor('main/readNews/'.$newsRow['id_news'], 'อ่านเพิ่มเติม...', 'class="btn btn-info" style=" position:absolute; right:0px; bottom:0px; display:inline; "');?>
+=======
+				<div class="panel panel-default" >
+					<div class="panel-heading">
+						<i class="fa fa-file-text-o"> <b><?php echo word_limiter($newsRow['news_title'],5,'...'); ?></b></i>
+					</div>
+					<div class="panel-body" style="height:180px;">
+						<p><?php  echo mb_substr($newsRow['news_detail'],0,200,'UTF-8'),"..."; ?></p>
+						<?php echo anchor('main/readNews/'.$newsRow['id_news'], 'อ่านเพิ่มเติม...', 'class="btn btn-default"');?>
+>>>>>>> parent of fa98650... update news & audio download
 					</div>
 				</div>
 			</div>
@@ -245,5 +260,8 @@
 		</div>
 		<!-- /.row -->
 		<hr>
+<<<<<<< HEAD
 >>>>>>> 4a89a851260a3594dbd68780144b77d2928573c8
+=======
+>>>>>>> parent of fa98650... update news & audio download
 		<?php $this->load->view('footer.php');?>

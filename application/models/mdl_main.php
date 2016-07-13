@@ -9,8 +9,8 @@ class Mdl_main extends CI_Model {
 		$file_name =  date('dmyHis');
 		$config['upload_path'] =  './files/docUpload/';
 		// die(var_dump(is_dir($config['upload_path'])));
-		$config['allowed_types'] = 'pdf|mp3|mp4';
-		$config['max_size']    = 0;
+		$config['allowed_types'] = 'pdf';
+		$config['max_size']    = '0';
 				$config['file_name'] = $file_name.'.'.substr($_FILES['userfile']['name'],-3);		//file_name
 				$config['remove_spaces'] = TRUE;
 				//$name_file = $config['file_name'] = $file_name.$_FILES['userfile']['name'];		//file_name
@@ -30,13 +30,10 @@ class Mdl_main extends CI_Model {
 			}else{
 			// echo $this->upload->display_errors('<p>', '</p>')."error_doc  ";
 			// return FALSE;
-			$massage = "กรุณาเลือกไฟล์ที่จะอัพโหลด";
-				$url = 'main/upload';
-				$this->alert($massage,$url);
-				// $data = array(
-				// 	'error' => '** กรุณาเลือกไฟล์  .pdf',
-				// 	);
-				// $this->load->view('admin/docUpload',$data);
+				$data = array(
+					'error' => '** กรุณาเลือกไฟล์  .pdf',
+					);
+				$this->load->view('admin/docUpload',$data);
 			// redirect('main/upload','refresh');
 			}
 		}

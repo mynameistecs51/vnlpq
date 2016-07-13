@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Main extends CI_Controller {
@@ -153,6 +154,8 @@ class Main extends CI_Controller {
 
 /* End of file welcome.php */
 =======
+=======
+>>>>>>> parent of fa98650... update news & audio download
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Main extends CI_Controller {
@@ -225,17 +228,23 @@ class Main extends CI_Controller {
 		$titleNews = $this->input->post('titleNews');
 		$newsContent = $this->input->post('newsContent');
 		if($titleNews != '' & $newsContent != ''){
+<<<<<<< HEAD
 			// echo "<pre>";
 			// echo $titleNews,"<br/>",$newsContent;
 			// echo "1";
 			$this->mdl_main->addNews($titleNews,$newsContent);
 		}else{
 			// echo "2";
+=======
+			$this->mdl_main->addNews($titleNews,$newsContent);
+		}else{
+>>>>>>> parent of fa98650... update news & audio download
 			$this->load->view('admin/addNews');
 		}
 	}
 	public function readNews($newsID)
 	{
+<<<<<<< HEAD
 		$data = array(
 			'readNews' => $this->mdl_main->getNewsID($newsID),
 			);
@@ -268,6 +277,37 @@ class Main extends CI_Controller {
 		// 	$this->alert($massage,$url);
 		// 	break;
 		// }
+=======
+		// $data = array(
+		// 	'readNews' => $this->mdl_main->getNewsID($newsID),
+		// 	);
+		// $this->load->view('readNews',$data);
+		switch ($newsID) {
+			case '4':
+			$this->load->view('readNews1');
+			break;
+			case '5':
+			$this->load->view('readNews2');
+			break;
+			case '6':
+			$this->load->view('readNews3');
+			break;
+			case '7':
+			$this->load->view('readNews4');
+			break;
+			case '8':
+			$this->load->view('readNews5');
+			break;
+			case '9':
+			$this->load->view('readNews6');
+			break;
+			default:
+			$massage ="กำลังปรับปรุงเนื้อหาข่าว..";
+			$url = "main/";
+			$this->alert($massage,$url);
+			break;
+		}
+>>>>>>> parent of fa98650... update news & audio download
 	}
 	function addPicture(){
 
@@ -302,5 +342,8 @@ class Main extends CI_Controller {
 }
 
 /* End of file welcome.php */
+<<<<<<< HEAD
 >>>>>>> 4a89a851260a3594dbd68780144b77d2928573c8
+=======
+>>>>>>> parent of fa98650... update news & audio download
 /* Location: ./application/controllers/welcome.php */
