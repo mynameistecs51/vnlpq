@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php $this->load->view('header');?>
 <div class="col-sm-12"><br/><br/></div>
 
@@ -30,36 +29,3 @@
 </div>
 <hr>
 <?php $this->load->view('footer');?>
-=======
-<?php $this->load->view('header');?>
-<div class="col-sm-12"><br/><br/></div>
-
-	<div class="row">
-		<div class="col-md-12">
-			<div class="panel panel-primary">
-				<div class="panel-heading">:: เพิ่มข่าว ::</div>
-				<div class="panel-body">
-					<!-- <form action="main/docUpload" method="post" > -->
-					<?php echo form_open('main/addNews'); ?>
-					<div class="form-group">
-						<label for="titleNews">หัวข้อข่าว</label>
-						<input type="text" class="form-control" name="titleNews" id="titleNews" placeholder="--- ตั้งชื่อหัวข้อข่าว ---">
-					</div>
-					<div class="form-group">
-						<label for="newsContent">รายละเอียดข่าว</label>
-						<textarea name="newsContent" id="newsContent" class="form-control" rows="10"></textarea>
-					</div>
-					<div class="form-groupt ">
-						<div class="modal-footer" style="text-align:center; background:#F6CECE;">
-							<button type="submit" id="save" class="btn btn-modal"><span class="   glyphicon glyphicon-floppy-saved"> SAVE</span></button>
-							<button type="reset" class="btn btn-modal" ><span class="   glyphicon glyphicon-floppy-remove"> CANCEL</span></button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
-<hr>
-<?php $this->load->view('footer');?>
->>>>>>> eb12f0d4178c9968f12647d31619649962c7d389
