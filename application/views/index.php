@@ -43,11 +43,12 @@
 		<?php foreach ($news as $newsRow ): ?>
 			<div class="col-md-4 " >
 				<div class="panel panel-default" >
-					<div class="panel-heading">
+					<div class="panel-heading" style="height:50px;">
 						<i class="fa fa-file-text-o"> <b><?php echo word_limiter($newsRow['news_title'],5,'...'); ?></b></i>
 					</div>
 					<div class="panel-body" style="height:180px;">
-						<p><?php  echo mb_substr($newsRow['news_detail'],0,200,'UTF-8'),"..."; ?></p>
+						<!-- <p><?php  echo mb_substr($newsRow['news_detail'],0,200,'UTF-8'),"..."; ?></p> -->
+						<p><?php   echo sprintf(mb_substr($newsRow['news_detail'],0,200,'UTF-8')); ?></p>
 						<?php echo anchor('main/readNews/'.$newsRow['id_news'], 'อ่านเพิ่มเติม...', 'class="btn btn-default"');?>
 					</div>
 				</div>
@@ -111,7 +112,7 @@
 			<h2 class="page-header">เสียงประชาสัมพันธ์โครงการฯ</h2>
 		</div>
 		<div class="col-sm-6">
-			<audio controls autoplay>
+			<audio controls >
 				<source src="<?php echo base_url().'files/RadioSpot3.mp3';?>" type="audio/mpeg">
 				</audio>
 			</div>

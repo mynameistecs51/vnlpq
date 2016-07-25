@@ -48,7 +48,7 @@ class Mdl_main extends CI_Model {
 		}
 		public function getNews()
 		{
-			$sql = "SELECT * FROM news ORDER BY id_news DESC";
+			$sql = "SELECT * FROM news ORDER BY id_news DESC LIMIT 0,6";
 			$query = $this->db->query($sql)->result_array();
 			return $query;
 		}

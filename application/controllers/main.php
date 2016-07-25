@@ -112,11 +112,17 @@ class Main extends CI_Controller {
 			$this->load->view('readNews8');
 			break;
 			case '12':
-				$this->load->view('readNews9');
-				break;
+			$this->load->view('readNews9');
+			break;
 			case '13':
-				$this->load->view('readNews10');
-				break;
+			$this->load->view('readNews10');
+			break;
+			case '14':
+			$this->load->view('readNews11');
+			break;
+			case '15':
+			$this->load->view('readNews12');
+			break;
 			default:
 			$massage ="กำลังปรับปรุงเนื้อหาข่าว..";
 			$url = "main/";
