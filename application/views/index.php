@@ -1,5 +1,15 @@
 <?php $this->load->view('header');?>
-
+<style type="text/css">
+	input[type=image]{
+		display: none;
+	}
+	.readmore{
+		position: absolute;
+		bottom:20px;
+		float:left;
+		display:block;
+	}
+</style>
 <!-- Header Carousel -->
 <header id="myCarousel" class="carousel slide">
 	<!-- Indicators -->
@@ -46,10 +56,10 @@
 					<div class="panel-heading" style="height:50px;">
 						<i class="fa fa-file-text-o"> <b><?php echo word_limiter($newsRow['news_title'],5,'...'); ?></b></i>
 					</div>
-					<div class="panel-body" style="height:180px;">
+					<div class="panel-body newsTitle" style="height:180px;">
 						<!-- <p><?php  echo mb_substr($newsRow['news_detail'],0,200,'UTF-8'),"..."; ?></p> -->
 						<p><?php   echo sprintf(mb_substr($newsRow['news_detail'],0,200,'UTF-8')); ?></p>
-						<?php echo anchor('main/readNews/'.$newsRow['id_news'], 'อ่านเพิ่มเติม...', 'class="btn btn-default"');?>
+						<?php echo anchor('main/readNews/'.$newsRow['id_news'], 'อ่านเพิ่มเติม...', 'class="btn btn-default readmore"');?>
 					</div>
 				</div>
 			</div>
@@ -69,27 +79,27 @@
 		</div>
 		<div class="col-md-4 col-sm-6">
 			<!-- <a href="portfolio-item.html"> -->
-				<img class="img-responsive img-portfolio img-hover" src="<?php echo base_url().'img/pictureNews/2.jpg'; ?>" alt="">
+			<img class="img-responsive img-portfolio img-hover" src="<?php echo base_url().'img/pictureNews/2.jpg'; ?>" alt="">
 			<!-- </a> -->
 		</div>
 		<div class="col-md-4 col-sm-6">
 			<!-- <a href="portfolio-item.html"> -->
-				<img class="img-responsive img-portfolio img-hover" src="<?php echo base_url().'img/pictureNews/3.jpg'; ?>" alt="">
+			<img class="img-responsive img-portfolio img-hover" src="<?php echo base_url().'img/pictureNews/3.jpg'; ?>" alt="">
 			<!-- </a> -->
 		</div>
 		<div class="col-md-4 col-sm-6">
 			<!-- <a href="portfolio-item.html"> -->
-				<img class="img-responsive img-portfolio img-hover" src="<?php echo base_url().'img/pictureNews/s1.jpg'; ?>" alt="">
+			<img class="img-responsive img-portfolio img-hover" src="<?php echo base_url().'img/pictureNews/s1.jpg'; ?>" alt="">
 			<!-- </a> -->
 		</div>
 		<div class="col-md-4 col-sm-6">
 			<!-- <a href="portfolio-item.html"> -->
-				<img class="img-responsive img-portfolio img-hover" src="<?php echo base_url().'img/pictureNews/a1.jpg'; ?>" alt="">
+			<img class="img-responsive img-portfolio img-hover" src="<?php echo base_url().'img/pictureNews/a1.jpg'; ?>" alt="">
 			<!-- </a> -->
 		</div>
 		<div class="col-md-4 col-sm-6">
 			<!-- <a href="portfolio-item.html"> -->
-				<img class="img-responsive img-portfolio img-hover" src="<?php echo base_url().'img/pictureNews/a2.jpg'; ?>" alt="">
+			<img class="img-responsive img-portfolio img-hover" src="<?php echo base_url().'img/pictureNews/a2.jpg'; ?>" alt="">
 			<!-- </a> -->
 		</div>
 	</div>
