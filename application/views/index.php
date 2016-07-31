@@ -1,13 +1,22 @@
 <?php $this->load->view('header');?>
 <style type="text/css">
-	input[type=image]{
+	input[type=image],input[type=audio/mpeg]{
 		display: none;
+		visibility: hidden;
+	}
+	iframe {
+		display: block;
+		height:150px;
+	}
+	.thumbnail{
+		/*display: none;*/
+		visibility: hidden;
 	}
 	.readmore{
-		position: absolute;
-		bottom:20px;
-		float:left;
+		position: absolute ;
 		display:block;
+		bottom: 0px;
+		right:0px;
 	}
 </style>
 <!-- Header Carousel -->
@@ -56,9 +65,9 @@
 					<div class="panel-heading" style="height:50px;">
 						<i class="fa fa-file-text-o"> <b><?php echo word_limiter($newsRow['news_title'],5,'...'); ?></b></i>
 					</div>
-					<div class="panel-body newsTitle" style="height:180px;">
-						<!-- <p><?php  echo mb_substr($newsRow['news_detail'],0,200,'UTF-8'),"..."; ?></p> -->
-						<p><?php   echo sprintf(mb_substr($newsRow['news_detail'],0,200,'UTF-8')); ?></p>
+					<div class="panel-body newsTitle" style="height:180px;position:relative;">
+						<p><?php  echo mb_substr($newsRow['news_detail'],0,200,'UTF-8'),"..."; ?></p>
+						<br>
 						<?php echo anchor('main/readNews/'.$newsRow['id_news'], 'อ่านเพิ่มเติม...', 'class="btn btn-default readmore"');?>
 					</div>
 				</div>

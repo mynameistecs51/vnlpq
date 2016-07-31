@@ -82,53 +82,54 @@ class Main extends CI_Controller {
 	}
 	public function readNews($newsID)
 	{
-		// $data = array(
-		// 	'readNews' => $this->mdl_main->getNewsID($newsID),
-		// 	);
-		// $this->load->view('readNews',$data);
-		switch ($newsID) {
-			case '4':
-			$this->load->view('readNews1');
-			break;
-			case '5':
-			$this->load->view('readNews2');
-			break;
-			case '6':
-			$this->load->view('readNews3');
-			break;
-			case '7':
-			$this->load->view('readNews4');
-			break;
-			case '8':
-			$this->load->view('readNews5');
-			break;
-			case '9':
-			$this->load->view('readNews6');
-			break;
-			case '10':
-			$this->load->view('readNews7');
-			break;
-			case '11':
-			$this->load->view('readNews8');
-			break;
-			case '12':
-			$this->load->view('readNews9');
-			break;
-			case '13':
-			$this->load->view('readNews10');
-			break;
-			case '14':
-			$this->load->view('readNews11');
-			break;
-			case '15':
-			$this->load->view('readNews12');
-			break;
-			default:
-			$massage ="กำลังปรับปรุงเนื้อหาข่าว..";
-			$url = "main/";
-			$this->alert($massage,$url);
-			break;
-		}
+		$data = array(
+			'readNews' => $this->mdl_main->getNewsID($newsID),
+			);
+		$this->load->view('readNews',$data);
+
+		// switch ($newsID) {
+		// 	case '4':
+		// 	$this->load->view('readNews1');
+		// 	break;
+		// 	case '5':
+		// 	$this->load->view('readNews2');
+		// 	break;
+		// 	case '6':
+		// 	$this->load->view('readNews3');
+		// 	break;
+		// 	case '7':
+		// 	$this->load->view('readNews4');
+		// 	break;
+		// 	case '8':
+		// 	$this->load->view('readNews5');
+		// 	break;
+		// 	case '9':
+		// 	$this->load->view('readNews6');
+		// 	break;
+		// 	case '10':
+		// 	$this->load->view('readNews7');
+		// 	break;
+		// 	case '11':
+		// 	$this->load->view('readNews8');
+		// 	break;
+		// 	case '12':
+		// 	$this->load->view('readNews9');
+		// 	break;
+		// 	case '13':
+		// 	$this->load->view('readNews10');
+		// 	break;
+		// 	case '14':
+		// 	$this->load->view('readNews11');
+		// 	break;
+		// 	case '15':
+		// 	$this->load->view('readNews12');
+		// 	break;
+		// 	default:
+		// 	$massage ="กำลังปรับปรุงเนื้อหาข่าว..";
+		// 	$url = "main/";
+		// 	$this->alert($massage,$url);
+		// 	break;
+		// }
 	}
 	function addPicture(){
 
