@@ -30,7 +30,7 @@ class Mdl_main extends CI_Model {
 			}else{
 			// echo $this->upload->display_errors('<p>', '</p>')."error_doc  ";
 			// return FALSE;
-			$massage = "กรุณาเลือกไฟล์ที่จะอัพโหลด";
+				$massage = "กรุณาเลือกไฟล์ที่จะอัพโหลด";
 				$url = 'main/upload';
 				$this->alert($massage,$url);
 				// $data = array(
@@ -52,6 +52,29 @@ class Mdl_main extends CI_Model {
 			$query = $this->db->query($sql)->result_array();
 			return $query;
 		}
+		public function getNewsAll()
+		{
+			$sql = "SELECT * FROM news ORDER BY id_news DESC ";
+			$query = $this->db->query($sql)->result_array();
+			return $query;
+		}
+		public function record_count()
+		{
+			return $this->db->count_all('news');
+		}
+		public function fetch_news($limit, $start) {		//สร้าง 1,2,3, link pagination
+			$this->db->limit($start,$limit);
+			$this->db->order_by('id_news','DESC');
+			$query = $this->db->get("news");
+
+			if ($query->num_rows() > 0) {
+				foreach ($query->result_array() as $row) {
+					$data[]= $row;
+				}
+				return $data;
+			}
+			return false;
+		}
 		public function getNewsID($newsID)
 		{
 			$sql = "SELECT * FROM news WHERE id_news='$newsID'";
@@ -72,27 +95,27 @@ class Mdl_main extends CI_Model {
 		}
 		function uploadActivityPicture($filed , $file){  		//upload multi file picture  // require filed name & files name
 
-		$date = date("d_m_y_H_i");
-		$name_array = array();
-		$count = count($_FILES[$filed]['name']);
+			$date = date("d_m_y_H_i");
+			$name_array = array();
+			$count = count($_FILES[$filed]['name']);
 
-		foreach($_FILES as $key => $value){
-			for($s=0; $s < $count; $s++) {
+			foreach($_FILES as $key => $value){
+				for($s=0; $s < $count; $s++) {
 
-				$_FILES[$filed]['name'] = $date.'.'.substr($value['name'][$s],-4);
-				$_FILES[$filed]['type']    = $value['type'][$s];
-				$_FILES[$filed]['tmp_name'] = $value['tmp_name'][$s];
-				$_FILES[$filed]['error']       = $value['error'][$s];
-				$_FILES[$filed]['size']    = $value['size'][$s];
-				$config['upload_path'] = './files_upload/file_research/';
-				$config['allowed_types'] = 'gif|jpg|png|doc|docx|pdf|ppt|pptx';
-				$this->load->library('upload', $config);
-				$this->upload->do_upload($filed);
-				$data = $this->upload->data();
-				$name_array[] = $data['file_name'];
+					$_FILES[$filed]['name'] = $date.'.'.substr($value['name'][$s],-4);
+					$_FILES[$filed]['type']    = $value['type'][$s];
+					$_FILES[$filed]['tmp_name'] = $value['tmp_name'][$s];
+					$_FILES[$filed]['error']       = $value['error'][$s];
+					$_FILES[$filed]['size']    = $value['size'][$s];
+					$config['upload_path'] = './files_upload/file_research/';
+					$config['allowed_types'] = 'gif|jpg|png|doc|docx|pdf|ppt|pptx';
+					$this->load->library('upload', $config);
+					$this->upload->do_upload($filed);
+					$data = $this->upload->data();
+					$name_array[] = $data['file_name'];
+				}
 			}
-		}
-		$names_research = implode(',', $name_array);
+			$names_research = implode(',', $name_array);
 		/*
 		 $this->load->database();
 		$db_data = array('id'=> NULL,
@@ -101,14 +124,14 @@ class Mdl_main extends CI_Model {
 		*/
 		return $names_research;
 	}
-		public function alert($massage,$url)
-		{
-			echo "<meta charset='UTF-8'>
-			<SCRIPT LANGUAGE='JavaScript'>
-				window.alert('$massage')
-				window.location.href='".site_url($url)."';
-			</SCRIPT>";
-		}
+	public function alert($massage,$url)
+	{
+		echo "<meta charset='UTF-8'>
+		<SCRIPT LANGUAGE='JavaScript'>
+			window.alert('$massage')
+			window.location.href='".site_url($url)."';
+		</SCRIPT>";
 	}
-	/* End of file mdl_main.php */
+}
+/* End of file mdl_main.php */
 /* Location: ./application/models/mdl_main.php */

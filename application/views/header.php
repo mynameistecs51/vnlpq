@@ -49,42 +49,42 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                           <?php echo anchor('main', 'หน้าแรก'); ?>
+                         <?php echo anchor('main', 'หน้าแรก'); ?>
+                     </li>
+                     <li>
+                     <?php echo anchor('main/newsActivity', 'ข่าวและกิจกรรม'); ?>
+                  </li>
+                  <li>
+                    <?php echo anchor('main/databegin', 'ข้อมูลเบื้องต้นโครงการ'); ?>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">คณะกรรมการ <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <?php echo anchor('main/consultant', 'คณะที่ปรึกษา'); ?>
                         </li>
                         <li>
-                            <a href="#">ข่าวและกิจกรรม</a>
+                            <?php echo anchor('main/endorsement', 'คณะกรรมการรับรอง'); ?>
                         </li>
                         <li>
-                            <?php echo anchor('main/databegin', 'ข้อมูลเบื้องต้นโครงการ'); ?>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">คณะกรรมการ <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <?php echo anchor('main/consultant', 'คณะที่ปรึกษา'); ?>
-                                </li>
-                                <li>
-                                    <?php echo anchor('main/endorsement', 'คณะกรรมการรับรอง'); ?>
-                                </li>
-                                <li>
-                                   <?php echo anchor('main/working', 'คณะทำงาน'); ?>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <?php echo anchor('main/workingtime', 'กรอบการดำเนินงาน'); ?>
-                        </li>
-                        <li>
-                            <?php echo anchor('main/workplan', 'แผนการทำงาน'); ?>
-                        </li>
-                        <li>
-			<?php echo anchor('#','ติดต่อเรา');?>
-		</li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container -->
-        </nav>
-        <div class="container"> <!-- body -->
+                         <?php echo anchor('main/working', 'คณะทำงาน'); ?>
+                     </li>
+                 </ul>
+             </li>
+             <li>
+                <?php echo anchor('main/workingtime', 'กรอบการดำเนินงาน'); ?>
+            </li>
+            <li>
+                <?php echo anchor('main/workplan', 'แผนการทำงาน'); ?>
+            </li>
+            <li>
+             <?php echo anchor('#','ติดต่อเรา');?>
+         </li>
+     </ul>
+ </div>
+ <!-- /.navbar-collapse -->
+</div>
+<!-- /.container -->
+</nav>
+<div class="container"> <!-- body -->
 
