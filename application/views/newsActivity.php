@@ -35,10 +35,10 @@
 	 			<div class="panel-heading" style="height:50px;">
 	 				<i class="fa fa-file-text-o"> <b><?php echo word_limiter($newsRow['news_title'],5,'...'); ?></b></i>
 	 			</div>
-	 			<div class="panel-body newsTitle" style="height:180px;position:relative;">
+	 			<div class="panel-body newsTitle" style="height:180px;width:350px;position:relative;">
 	 				<p><?php  echo mb_substr($newsRow['news_detail'],0,200,'UTF-8'),"..."; ?></p>
 	 				<br>
-	 				<?php echo anchor('main/readNews/'.$newsRow['id_news'], 'อ่านเพิ่มเติม...', 'class="btn btn-default readmore"');?>
+	 				<?php echo anchor('main/readNews/'.$newsRow['id_news'], 'อ่านเพิ่มเติม...', 'class="btn btn-default readmore" ');?>
 	 			</div>
 	 		</div>
 	 	</div>
